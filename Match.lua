@@ -1,8 +1,11 @@
-local default = { --Unique.
-  "Unable",
-  "To",
-  "Match",
-  69
+math.randomseed(os.time()) --Fresh seed everytime.
+
+local no_match = { --Unique table structure so it cannot be easily recreated by accident when comparing tables..
+  "Unable to find a match.",
+  math.random(0, 150),
+  math.random(0, 20000),
+  math.random(0, 50),
+  math.random(0, 4000),
 }
 
 local function realMatch(mat, params)
@@ -24,7 +27,7 @@ local function realMatch(mat, params)
 end
 
 local module = {
-  ["no_match"] = default,
+  ["no_match"] = no_match,
   match = function(toMatch) 
     return function(data) 
        return realMatch(toMatch, data)

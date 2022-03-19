@@ -3,13 +3,13 @@
 
 local function realClass(name, data)
   local tmp = {}
-  local thisTmp = {}
+  local thisTmp = {} --For this
 
-  thisTmp.__index = function(self, i)    
+  thisTmp.__index = function(self, i) --this.item
     return rawget(data, i)
   end
 
-  thisTmp.__newindex = function(self, i, v) 
+  thisTmp.__newindex = function(self, i, v) --this.item = new
     return rawset(data, i, v)
   end
 
