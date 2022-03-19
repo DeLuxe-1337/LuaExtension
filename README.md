@@ -11,21 +11,19 @@ https://replit.com/@DeLuxeIsHandsome/LuaFeatures
 Example
 
 ```lua
+--Read main.lua for latest information!
+
 require("CustomFeat"):Initialize()
 
-match("'This will not be matched!'") {
-  {"ToMatch", function() 
-     print"YAY"  
-  end},
-
-  {"Test", function(input) 
-     print("The input is " .. input)  
-  end},
-
-  {no_match, function(input) 
+match("Woah") {
+  case("Woah", function() 
+      print"Matched woah"
+  end),
+  
+  case(no_match, function(input) 
      print("Unable to match " .. input)  
-  end}
+  end)
 }
 
---Output: Unable to match 'This will not be matched!'
+--Output: Matched woah
 ```
