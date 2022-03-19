@@ -1,3 +1,6 @@
+--Todo
+--Add constructor
+
 local function realClass(name, data)
   local tmp = {}
   local thisTmp = {}
