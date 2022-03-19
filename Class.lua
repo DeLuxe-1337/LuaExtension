@@ -1,15 +1,25 @@
 local function realClass(name, data)
   local tmp = {}
+  local thisTmp = {}
+
+  thisTmp.__index = function(self, i)    
+    return rawget(data, i)
+  end
+
+  thisTmp.__newindex = function(self, i, v) 
+    return rawset(data, i, v)
+  end
+
+  setmetatable(thisTmp, tmp)
   
   data.__index = function(self, i)    
-    getfenv()["this"] = tmp
-    
-    print(debug.getinfo(1, "n").name)
+    getfenv()["this"] = thisTmp
+
     local get = rawget(data, i)
  
     if type(get) == "table" then
        if get[1] == true then
-          return "This item in the class is private."
+          return "Can't retrieve 'private' value outside of class."
       else
         if get[1] == false then
           return get[2]
@@ -26,14 +36,17 @@ local function realClass(name, data)
     if type(get) == "table" then
        if get[1] == true then
           print("Cannot set '" .. i .. "' because you're trying to set it outside of the class.")
+        rawset(data, i, get)
         return get
       else
         if get[1] == false then
+          rawset(data, i, v)
           return v
         end
       end
     end
 
+    rawset(data, i, v)
     return v
   end
 

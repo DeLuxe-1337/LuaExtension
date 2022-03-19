@@ -14,14 +14,14 @@ class("Test") {
   test = private "test",
   func = public (function(hi) 
       print(hi) 
+      
       this.test = "hola"
+      print(this.test)
   end)
 }
 
 
 print(Test.test)
 Test.func("This is a test")
-
-Test.test = "hi"
 
 print(Test.test)
