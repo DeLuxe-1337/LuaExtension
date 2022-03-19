@@ -1,0 +1,2 @@
+language = "lua"
+run = "dofile("main.lua")"
