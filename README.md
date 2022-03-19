@@ -11,7 +11,7 @@ https://replit.com/@DeLuxeIsHandsome/LuaFeatures
 Example
 
 ```lua
-require("CustomFeat"):Initialize() --Initalize the globals to our env
+require("CustomFeat"):Initialize()
 
 match("'This will not be matched!'") {
   {"ToMatch", function() 
@@ -22,7 +22,7 @@ match("'This will not be matched!'") {
      print("The input is " .. input)  
   end},
 
-  {"default", function(input) 
+  {no_match, function(input) 
      print("Unable to match " .. input)  
   end}
 }
