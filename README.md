@@ -11,6 +11,8 @@ https://replit.com/@DeLuxeIsHandsome/LuaFeatures
 Example
 
 ```lua
+require("CustomFeat"):Initialize()
+
 match("'This will not be matched!'") {
   {"ToMatch", function() 
      print"YAY"  
@@ -24,4 +26,6 @@ match("'This will not be matched!'") {
      print("Unable to match " .. input)  
   end}
 }
+
+--Output: Unable to match 'This will not be matched!'
 ```
