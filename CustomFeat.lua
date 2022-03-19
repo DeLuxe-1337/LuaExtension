@@ -9,6 +9,7 @@ function addModuleFunctions(mod)
 end
 
 addModuleFunctions(require("Match"))
+addModuleFunctions(require("Class"))
 
 function module:Initialize()
    for i,v in pairs(module.funcs) do
