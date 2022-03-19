@@ -1,5 +1,4 @@
-local customf = require("CustomFeat")
-customf:Initialize()
+require("CustomFeat"):Initialize()
 
 match("'This will not be matched!'") {
   {"ToMatch", function() 
@@ -10,7 +9,7 @@ match("'This will not be matched!'") {
      print("The input is " .. input)  
   end},
 
-  {"default", function(input) 
+  {no_match, function(input) 
      print("Unable to match " .. input)  
   end}
 }
