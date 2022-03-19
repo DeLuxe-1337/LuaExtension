@@ -10,7 +10,7 @@ https://replit.com/@DeLuxeIsHandsome/LuaFeatures
 
 Example
 
-```
+```lua
 match("'This will not be matched!'") {
   {"ToMatch", function() 
      print"YAY"  
