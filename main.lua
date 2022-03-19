@@ -1,13 +1,9 @@
-require("CustomFeat"):Initialize()
+require("CustomFeat"):Initialize() --Initialize all globals
 
 match("'This will not be matched!'") {
-  {"ToMatch", function() 
-     print"YAY"  
-  end},
+  case("Test", function() print"test" end), --Looks better
 
-  {"Test", function(input) 
-     print("The input is " .. input)  
-  end},
+  --Alternatively you can just manually make the table.
 
   {no_match, function(input) 
      print("Unable to match " .. input)  

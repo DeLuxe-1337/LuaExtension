@@ -29,6 +29,9 @@ local module = {
     return function(data) 
        return realMatch(toMatch, data)
     end
+  end,
+  case = function(test, params) 
+     return {test, params}
   end
 }
 
