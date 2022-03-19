@@ -53,4 +53,8 @@ print(Test.test)
 --This is a test
 --hola
 --Can't retrieve 'private' value outside of class.
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> origin/main
