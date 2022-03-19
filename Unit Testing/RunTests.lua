@@ -7,9 +7,11 @@ local module = {}
 
 function module:Run()
    for i,v in pairs(tests) do
-    print("Testing: " .. i)
+    print("Test: " .. i)
      v:Test()
   end
+
+  print("Test completed.")
 end
 
 return module
