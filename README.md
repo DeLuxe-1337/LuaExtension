@@ -11,7 +11,7 @@ https://replit.com/@DeLuxeIsHandsome/LuaFeatures
 Example
 
 ```lua
-require("CustomFeat"):Initialize()
+require("CustomFeat"):Initialize() --Initalize the globals to our env
 
 match("'This will not be matched!'") {
   {"ToMatch", function() 
