@@ -10,7 +10,7 @@ https://replit.com/@DeLuxeIsHandsome/LuaFeatures
 
 Example
 
-match("'This will not be matched!'") {
+`match("'This will not be matched!'") {
   {"ToMatch", function() 
      print"YAY"  
   end},
@@ -23,3 +23,4 @@ match("'This will not be matched!'") {
      print("Unable to match " .. input)  
   end}
 }
+`
