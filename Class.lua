@@ -1,5 +1,10 @@
 local function realClass(name, data)
-  data.__index = function(self, i)
+  local tmp = {}
+  
+  data.__index = function(self, i)    
+    getfenv()["this"] = tmp
+    
+    print(debug.getinfo(1, "n").name)
     local get = rawget(data, i)
  
     if type(get) == "table" then
@@ -32,7 +37,6 @@ local function realClass(name, data)
     return v
   end
 
-  local tmp = {}
   setmetatable(tmp, data)
   
   getfenv()[name] = tmp

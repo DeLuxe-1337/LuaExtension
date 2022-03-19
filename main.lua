@@ -14,6 +14,7 @@ class("Test") {
   test = private "test",
   func = public (function(hi) 
       print(hi) 
+      this.test = "hola"
   end)
 }
 
