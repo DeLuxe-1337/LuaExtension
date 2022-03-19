@@ -8,7 +8,7 @@ Classes
 
 To test it you can view my replit!
 
-https://replit.com/@DeLuxeIsHandsome/LuaFeatures
+https://replit.com/@DeLuxeIsHandsome/LuaExtension
 
 
 Match example:
