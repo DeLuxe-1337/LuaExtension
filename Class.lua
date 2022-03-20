@@ -1,5 +1,6 @@
 --Todo
 --Add constructor
+--add inheritance
 
 local function realClass(name, data)
   local tmp = {}
