@@ -6,7 +6,17 @@ local no_match = { --Unique table structure so it cannot be easily recreated by 
   math.random(0, 20000),
   math.random(0, 50),
   math.random(0, 4000),
+  __tostring = function(self) 
+     local temp = getmetatable(self)
+     setmetatable(self, nil)
+     local ret = 'no_match: ' .. tostring(self)
+     setmetatable(self, temp)
+    
+     return string.gsub(ret, "table: ", "")
+  end
 }
+
+setmetatable(no_match, no_match)
 
 local function realMatch(mat, params)
   local matched = false
